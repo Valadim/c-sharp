@@ -1,5 +1,4 @@
 ﻿// Задача 23
-
 // Напишите программу, которая принимает на вход число (N) 
 // и выдаёт таблицу кубов чисел от 1 до N.
 // 5 ->
@@ -15,7 +14,7 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 GetCube(num);
 
-void GetCube (int n)
+static void GetCube (int n)
 {
 
   for (int i = 1; i <= n; i++)
