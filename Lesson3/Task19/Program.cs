@@ -9,32 +9,24 @@
 
 // 23432 -> да
 
- Console.Write("Введите пятизначное число: ");
-        int number = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
 
-        if (IsPalindrome(number))
-        {
-            Console.WriteLine("Данное число является палиндромом.");
-        }
-        else
-        {
-            Console.WriteLine("Данное число не является палиндромом.");
-        }
 
-        Console.ReadLine();
-    }
+Console.WriteLine(IsPalindrome(number) ? "Данное число является палиндромом." : "Данное число не является палиндромом.");
 
-   bool IsPalindrome(int number)
+
+bool IsPalindrome(int number)
+{
+    int originalNumber = number;
+    int reversedNumber = 0;
+
+    while (number != 0)
     {
-        int originalNumber = number;
-        int reversedNumber = 0;
-
-        while (number != 0)
-        {
-            int remainder = number % 10;
-            reversedNumber = reversedNumber * 10 + remainder;
-            number /= 10;
-        }
-
-        return originalNumber == reversedNumber;
+        int remainder = number % 10;
+        reversedNumber = reversedNumber * 10 + remainder;
+        number /= 10;
     }
+
+    return originalNumber == reversedNumber;
+}
