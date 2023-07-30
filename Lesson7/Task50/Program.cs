@@ -25,7 +25,7 @@ void GetElementFromMultipleArray(int[,] arr)
   Console.Write("Введите координат Y:");
   int yCoord = Convert.ToInt32(Console.ReadLine());
 
-  if (xCoord > arr.GetLength(0) || yCoord > arr.GetLength(1))
+  if (xCoord < 0 || xCoord >= arr.GetLength(0) || yCoord < 0 || yCoord >= arr.GetLength(1))
   {
     Console.WriteLine("Такого элемента в массиве нет");
   }
